@@ -6,7 +6,7 @@ void setup() {
   
   fill(0);
   
-  // uses bit shifting to find RGB (https://processing.org/reference/red_.html)
+  // uses bit shifting to find RGB (https://processing.org/reference/red_.html) because it seems to be more accurate than the built-in functions
   // uses Math.round and Math.floor to convert floats in to integers
   // I only need Math.round to do that, but I was having issues with rounding before flooring
   color value = color(hue, saturation, brightness);
@@ -20,7 +20,7 @@ boolean ptInRect(float x, float y, float sizeX, float sizeY) {
   return (mouseX >= x && mouseX <= x + sizeX && mouseY >= y && mouseY <= y + sizeY);
 };
 
-// creates a gradient effect using 255 thin lines
+// creates a gradient effect using 255 thin (1px) lines
 void createGradient(float x, float y) {
   for (int i = 0; i < 255; i++) {
     fill(i, 255, 255);
